@@ -4,7 +4,7 @@ clear = lambda: os.system('cls')
 def main():
     clear()
     tab = table()
-    game_over =True
+    game_over = True
     
     while game_over:
         choice = player_choice(player=1)
@@ -42,6 +42,9 @@ def table():
 def change(table, choice, player):
     table[choice - 1] = player
     print(f"""
+
+  TIC TAC TOE
+
     {table[0]}{table[1]}{table[2]}
     {table[3]}{table[4]}{table[5]}
     {table[6]}{table[7]}{table[8]}
@@ -56,7 +59,7 @@ def finish(table):
         table[2] == table[5] == table[8] == '⭕' or
         table[0] == table[4] == table[8] == '⭕' or
         table[2] == table[4] == table[6] == '⭕'):
-        print("2 is the winner")
+        print("Player 2 is the winner")
         return True
         
     elif (table[0] == table[1] == table[2] == '❌' or
@@ -67,15 +70,13 @@ def finish(table):
         table[2] == table[5] == table[8] == '❌' or
         table[0] == table[4] == table[8] == '❌' or
         table[2] == table[4] == table[6] == '❌'):
-        print("1 is the winner")
+        print("Player 1 is the winner")
         return True
     elif table[0] != '⬜️' and table[1] != "⬜️" and table[2] != "⬜️" and table[3] != "⬜️" and table[4] != "⬜️" and table[5] !="⬜️" and table[6] != "⬜️" and table[7] != "⬜️" and table[8] != "⬜️":
         print("It's a draw")
         return True
     
         
-        
-
 
 if __name__ == "__main__":
     main()
